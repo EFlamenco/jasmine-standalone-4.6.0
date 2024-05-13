@@ -1,20 +1,23 @@
-function insertDashes(str) {
-	// write code here
+class User {
+	firstName;
+	lastName;
+	middleName;
+	constructor(data = {}){
+	this.firstName = data.firstName;
+	this.lastName = data.lastName || '';
+	this.middleName = data.middleName;
+	}
 	}
 	/**
 	* Test Suite
 	*/
-	describe('insertDashes()', () => {
-		it('insert dashes in between chars', () => {
-			// arrange
-			const value = "aba caba";
-			
-			// act
-			const result = insertDashes(value);
-			// log
-			console.log("result: ", result);
-			
-			// assert
-			expect(result).toBe(undefined);
-		});
+	describe(`${User.name} Class`, () => {
+	it('first name defaults to empty', () => {
+	// arrange
+	const data = { firstName: null };
+	// act
+	const model = new User(data);
+	// assert
+	expect(model.firstName).toBe('');
+	});
 	});
